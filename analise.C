@@ -48,7 +48,7 @@ TGraph read_TGraph(TString path, TString filename) {
     ifstream inp;
 
     std::vector<double> x_array, y_array;
-    double x, y;
+    double x, y, x_bremsstrahlung_min = 10e3, y_bremsstrahlung_min = 10e3;
     int N = 0;
 
     inp.open(path + filename);
@@ -62,11 +62,21 @@ TGraph read_TGraph(TString path, TString filename) {
 
         if (inp.eof()) break;
 
+        if (x / 2 > 0 && x / 2 < 10 && y_bremsstrahlung_min > y) {
+            x_bremsstrahlung_min = x / 2;
+            y_bremsstrahlung_min = y;
+        }
         x_array.push_back(x / 2);
         y_array.push_back(y);
         N++;
     }
     cout << "N = " << N << endl;
+    cout << "\\theta_brehmsstralum_min = " << x_bremsstrahlung_min << endl;
+
+    // change it later
+    double dLiF = 201e-12, hc = 1.23984198e-6, q = 1.6e-19;
+
+    cout << "\\theta_bremsstrahlung_min_energy = " << hc / (2 * dLiF * sin((x_bremsstrahlung_min + 0.5) * M_PI / 180) * 1.e3) << (" kV") << endl;
 
     inp.close();
     // achando picos
@@ -93,14 +103,14 @@ TGraph read_TGraph(TString path, TString filename) {
     auto mg = new TMultiGraph();
     mg->SetName("mg");
     mg->SetTitle(";#theta (^{#circ});Contagens/#theta");
-    // mg->GetYaxis()->SetMaxDigits(1);
-    mg->GetYaxis()->SetLabelSize(0.03);
 
     TCanvas *c = new TCanvas("c", " ", 0, 0, 800, 600);
 
     mg->Add(gr);
     mg->Add(gr_peaks, "P");
     mg->Draw("A");
+    mg->GetYaxis()->SetMaxDigits(2);
+    mg->GetYaxis()->SetLabelSize(0.03);
 
     c->SaveAs(Form("plots/") + filename + Form(".png"));
     c->Close();
