@@ -1,0 +1,377 @@
+
+Processing analise.C...
+N = 2281
+numero de picos = 13
+Peaks (i, x, y)
+(349, 11.297027, 622.000000)
+(422, 13.136992, 2377.000000)
+(653, 18.959347, 2447.000000)
+(790, 22.412432, 470.000000)
+(835, 23.546657, 972.000000)
+(994, 27.554252, 480.000000)
+(1102, 30.276392, 263.000000)
+(1139, 31.208977, 977.000000)
+(1272, 34.561242, 725.000000)
+(1530, 41.064132, 220.000000)
+(1653, 44.164347, 365.000000)
+(1758, 46.810872, 8679.000000)
+(1903, 50.465597, 211.000000)
+Info in <TCanvas::Print>: png file plots/KBr.dat.png has been created
+v = [11.297027,13.136992,18.959347,22.412432,23.546657,27.554252,30.276392,31.208977,34.561242,41.064132,44.164347,46.810872,50.465597]
+v = [622.000000,2377.000000,2447.000000,470.000000,972.000000,480.000000,263.000000,977.000000,725.000000,220.000000,365.000000,8679.000000,211.000000]
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+ FCN=1459.95 FROM MIGRAD    STATUS=CONVERGED      90 CALLS          91 TOTAL
+                     EDM=1.51345e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.67063e+02   9.11186e+00   8.06488e-02   2.69398e-06
+   2  Mean         1.13095e+01   2.46503e-03   4.59526e-05  -3.97347e-03
+   3  Sigma        2.00018e-01   4.77616e-03   6.83412e-05   3.84131e-03
+chi2/ndof = 1459.95/37 = 39.4581
+cristallite diameter:  d = 255.010173 pm
+ FCN=3055.52 FROM MIGRAD    STATUS=CONVERGED      85 CALLS          86 TOTAL
+                     EDM=1.70494e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.21061e+03   2.26398e+01   4.18156e-01  -1.02906e-05
+   2  Mean         1.31542e+01   6.51040e-04   1.75234e-05   1.29329e-01
+   3  Sigma        9.26367e-02   6.91552e-04   3.45005e-05  -7.26562e-02
+chi2/ndof = 3055.52/37 = 82.5817
+cristallite diameter:  d = 554.465244 pm
+ FCN=3689.75 FROM MIGRAD    STATUS=CONVERGED      86 CALLS          87 TOTAL
+                     EDM=6.63451e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.5 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.11310e+03   2.52778e+01  -1.19092e-02   6.71159e-06
+   2  Mean         1.89458e+01   6.47460e-04   6.15017e-07   6.19453e-02
+   3  Sigma        7.96795e-02   7.23284e-04   2.99625e-06   1.03969e-01
+chi2/ndof = 3689.75/37 = 99.7229
+cristallite diameter:  d = 663.669042 pm
+ FCN=1030.24 FROM MIGRAD    STATUS=CONVERGED      93 CALLS          94 TOTAL
+                     EDM=7.25438e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.19097e+02   4.51452e+00   4.37550e-02  -4.08411e-04
+   2  Mean         2.24590e+01   5.38734e-03   8.40052e-05  -5.38274e-02
+   3  Sigma        3.21708e-01   8.91898e-03   1.06388e-04  -1.37752e-01
+chi2/ndof = 1030.24/37 = 27.8443
+cristallite diameter:  d = 168.230241 pm
+ FCN=2685.23 FROM MIGRAD    STATUS=CONVERGED     144 CALLS         145 TOTAL
+                     EDM=3.3354e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     6.44368e+02   2.36114e+01   1.90187e-01   1.14728e-05
+   2  Mean         2.35327e+01   1.34361e-03   3.38658e-05  -5.40002e-02
+   3  Sigma        1.14742e-01   3.98407e-03   6.82921e-05   5.84398e-02
+chi2/ndof = 2685.23/37 = 72.5737
+cristallite diameter:  d = 475.440554 pm
+ FCN=868.432 FROM MIGRAD    STATUS=CONVERGED      91 CALLS          92 TOTAL
+                     EDM=1.52965e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.30278e+02   4.79552e+00   4.22076e-02   5.31764e-05
+   2  Mean         2.75440e+01   4.64816e-03   6.69560e-05   3.60877e-01
+   3  Sigma        2.94600e-01   7.41183e-03   8.42331e-05  -3.86047e-02
+chi2/ndof = 868.432/37 = 23.4711
+cristallite diameter:  d = 191.479646 pm
+ FCN=303.749 FROM MIGRAD    STATUS=CONVERGED     106 CALLS         107 TOTAL
+                     EDM=1.87879e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.62380e+02   3.38136e+00   1.86459e-02   2.30806e-06
+   2  Mean         3.03104e+01   1.23746e-02   1.02379e-04   5.46947e-04
+   3  Sigma        4.92412e-01   2.59959e-02   1.35669e-04   8.67319e-04
+chi2/ndof = 303.749/37 = 8.20944
+cristallite diameter:  d = 117.656958 pm
+ FCN=2652.41 FROM MIGRAD    STATUS=CONVERGED      98 CALLS          99 TOTAL
+                     EDM=4.68804e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     7.24378e+02   2.01920e+01   1.91182e-01   2.01972e-05
+   2  Mean         3.11832e+01   1.34277e-03   3.33002e-05  -1.16367e-01
+   3  Sigma        1.26091e-01   3.25857e-03   6.33861e-05   9.23325e-02
+chi2/ndof = 2652.41/37 = 71.6867
+cristallite diameter:  d = 463.659024 pm
+ FCN=2024.6 FROM MIGRAD    STATUS=CONVERGED     100 CALLS         101 TOTAL
+                     EDM=2.06951e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.45717e+02   8.95486e+00   8.91377e-02  -1.57158e-06
+   2  Mean         3.46005e+01   2.80694e-03   5.96757e-05  -5.98456e-03
+   3  Sigma        2.15932e-01   5.70669e-03   8.84519e-05  -7.37760e-04
+chi2/ndof = 2024.6/37 = 54.719
+cristallite diameter:  d = 281.399594 pm
+ FCN=209.743 FROM MIGRAD    STATUS=CONVERGED      86 CALLS          87 TOTAL
+                     EDM=3.11155e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.46460e+02   3.33732e+00   1.52954e-02  -9.98121e-05
+   2  Mean         4.10572e+01   8.95745e-03   6.33310e-05  -1.44659e-02
+   3  Sigma        3.97479e-01   1.60533e-02   7.85678e-05  -1.56797e-02
+chi2/ndof = 209.743/37 = 5.66874
+cristallite diameter:  d = 166.875689 pm
+ FCN=547.619 FROM MIGRAD    STATUS=CONVERGED      93 CALLS          94 TOTAL
+                     EDM=4.19056e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.87291e+02   4.13740e+00   2.95587e-02  -2.51740e-06
+   2  Mean         4.42120e+01   5.77966e-03   6.57855e-05  -7.67137e-04
+   3  Sigma        3.20063e-01   9.37733e-03   8.11476e-05  -3.28041e-04
+chi2/ndof = 547.619/37 = 14.8005
+cristallite diameter:  d = 218.020349 pm
+ FCN=8780.08 FROM MIGRAD    STATUS=CONVERGED     530 CALLS         531 TOTAL
+                     EDM=3.5337e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.55674e+02   1.77137e+01   1.15167e-01   3.06356e-04
+   2  Mean         4.85891e+01   2.12136e-01   1.37563e-03  -2.49144e-02
+   3  Sigma        1.80597e+00   7.32919e-02   1.82878e-02** at limit **
+chi2/ndof = 8780.08/37 = 237.3
+cristallite diameter:  d = 41.869542 pm
+ FCN=245.506 FROM MIGRAD    STATUS=CONVERGED      81 CALLS          82 TOTAL
+                     EDM=1.85992e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.21142e+02   2.98463e+00   9.91627e-04  -6.90930e-05
+   2  Mean         5.04867e+01   9.89040e-03  -1.86188e-05  -7.53416e-03
+   3  Sigma        3.98869e-01   1.73529e-02  -1.65980e-05   2.80792e-03
+chi2/ndof = 245.506/37 = 6.63531
+cristallite diameter:  d = 197.081754 pm
+Info in <TCanvas::Print>: png file plots/h_KBr.png has been created
+v = [393.109169,338.758698,237.444871,201.800101,193.081297,166.710532,152.752994,148.890504,135.760982,117.372981,110.555536,102.791434,99.927827]
+Info in <TCanvas::Print>: png file plots/indices_KBr.dat.png has been created
+------ second and third orders ------
+1st 		 2nd 		 3rd
+11.309479 	 23.092502 	 36.038244
+13.154168 	 27.074202 	 43.056251
+18.945781 	 40.492350 	 76.911079
+22.458962 	 49.821948 	 nan
+23.532690 	 52.991333 	 nan
+27.544041 	 67.647341 	 nan
+30.310381 	 nan 	 nan
+31.183219 	 nan 	 nan
+34.600500 	 nan 	 nan
+41.057200 	 nan 	 nan
+44.211957 	 nan 	 nan
+48.589050 	 nan 	 nan
+50.486690 	 nan 	 nan
+N = 2223
+numero de picos = 8
+Peaks (i, x, y)
+(481, 16.124087, 12752.000000)
+(753, 22.979847, 2224.000000)
+(973, 28.524947, 289.000000)
+(1163, 33.313897, 1936.000000)
+(1344, 37.876002, 667.000000)
+(1518, 42.261672, 424.000000)
+(1854, 50.730552, 246.000000)
+(2028, 55.116222, 260.000000)
+Info in <TCanvas::Print>: png file plots/NaClbrutoPlano.dat.png has been created
+v = [16.124087,22.979847,28.524947,33.313897,37.876002,42.261672,50.730552,55.116222]
+v = [12752.000000,2224.000000,289.000000,1936.000000,667.000000,424.000000,246.000000,260.000000]
+ FCN=7402.4 FROM MIGRAD    STATUS=CONVERGED      89 CALLS          90 TOTAL
+                     EDM=2.10289e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.3 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.19901e+04   6.40142e+01  -1.45801e-01  -1.55291e-06
+   2  Mean         1.61093e+01   2.14141e-04  -1.56393e-07  -1.94947e-01
+   3  Sigma        5.46990e-02   1.98574e-04   7.64617e-07  -5.64352e-02
+chi2/ndof = 7402.4/37 = 200.065
+cristallite diameter:  d = 951.758625 pm
+ FCN=2820.85 FROM MIGRAD    STATUS=CONVERGED      97 CALLS          98 TOTAL
+                     EDM=1.60373e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.82203e+03   2.81137e+01   4.05132e-01  -1.98711e-06
+   2  Mean         2.29941e+01   6.54846e-04   1.66912e-05   3.53164e-02
+   3  Sigma        7.50727e-02   9.62670e-04   4.38471e-05  -1.98479e-04
+chi2/ndof = 2820.85/37 = 76.2391
+cristallite diameter:  d = 723.740832 pm
+ FCN=417.686 FROM MIGRAD    STATUS=CONVERGED      73 CALLS          74 TOTAL
+                     EDM=2.5411e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.99073e+02   5.05790e+00   3.12575e-02  -1.99853e-04
+   2  Mean         2.85271e+01   3.48968e-03   3.48330e-05  -9.47296e-02
+   3  Sigma        2.08359e-01   4.71928e-03   4.62100e-05  -9.56551e-02
+chi2/ndof = 417.686/36 = 11.6024
+cristallite diameter:  d = 273.218914 pm
+ FCN=2651.75 FROM MIGRAD    STATUS=CONVERGED      85 CALLS          86 TOTAL
+                     EDM=1.02496e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.10926e+03   1.74165e+01  -9.99910e-03  -4.75393e-07
+   2  Mean         3.33068e+01   8.64886e-04  -1.66389e-06   1.14354e-02
+   3  Sigma        8.19670e-02   9.49589e-04   2.44018e-06   3.34670e-03
+chi2/ndof = 2651.75/36 = 73.6597
+cristallite diameter:  d = 730.127638 pm
+ FCN=1059.35 FROM MIGRAD    STATUS=CONVERGED      89 CALLS          90 TOTAL
+                     EDM=7.25298e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.86853e+02   9.14324e+00   8.77320e-02   1.67812e-08
+   2  Mean         3.78497e+01   1.82543e-03   2.90000e-05  -5.39599e-03
+   3  Sigma        1.27734e-01   2.41132e-03   5.06890e-05  -1.21444e-03
+chi2/ndof = 1059.35/36 = 29.4265
+cristallite diameter:  d = 495.887992 pm
+ FCN=726.319 FROM MIGRAD    STATUS=CONVERGED      87 CALLS          88 TOTAL
+                     EDM=6.00994e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.06357e+02   7.83976e+00   5.95426e-02   1.70268e-05
+   2  Mean         4.22113e+01   2.27351e-03   2.95651e-05  -3.15219e-02
+   3  Sigma        1.50861e-01   3.20333e-03   4.68801e-05   2.45981e-02
+chi2/ndof = 726.319/37 = 19.6302
+cristallite diameter:  d = 447.616627 pm
+ FCN=335.729 FROM MIGRAD    STATUS=CONVERGED      71 CALLS          72 TOTAL
+                     EDM=4.13613e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.3 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.21683e+02   3.57519e+00   5.54401e-03  -5.87071e-06
+   2  Mean         5.07438e+01   5.12825e-03  -2.62280e-06   4.46526e-03
+   3  Sigma        2.42958e-01   6.86088e-03  -1.40826e-05   1.05393e-03
+chi2/ndof = 335.729/37 = 9.07374
+cristallite diameter:  d = 325.327423 pm
+ FCN=327.776 FROM MIGRAD    STATUS=CONVERGED      82 CALLS          83 TOTAL
+                     EDM=2.24054e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.45487e+02   3.79328e+00   2.18598e-02  -7.73640e-05
+   2  Mean         5.51493e+01   4.86605e-03   4.29989e-05   1.86927e-02
+   3  Sigma        2.51538e-01   6.42644e-03   5.21535e-05  -2.03786e-02
+chi2/ndof = 327.776/37 = 8.85882
+cristallite diameter:  d = 347.964889 pm
+Info in <TCanvas::Print>: png file plots/h_NaClbrutoPlano.png has been created
+v = [277.838631,197.349487,161.423906,140.391283,125.640576,114.743105,99.560326,93.940921]
+Info in <TCanvas::Print>: png file plots/indices_NaClbrutoPlano.dat.png has been created
+------ second and third orders ------
+1st 		 2nd 		 3rd
+16.109289 	 33.706639 	 56.347234
+22.994138 	 51.377359 	 nan
+28.527132 	 72.775094 	 nan
+33.306828 	 nan 	 nan
+37.849653 	 nan 	 nan
+42.211253 	 nan 	 nan
+50.743830 	 nan 	 nan
+55.149256 	 nan 	 nan
+N = 2223
+numero de picos = 10
+Peaks (i, x, y)
+(46, 5.159912, 297.000000)
+(377, 13.502767, 500.000000)
+(463, 15.670397, 3923.000000)
+(734, 22.500952, 2206.000000)
+(901, 26.710187, 302.000000)
+(953, 28.020847, 595.000000)
+(1145, 32.860207, 373.000000)
+(1327, 37.447517, 699.000000)
+(1498, 41.757572, 411.000000)
+(2017, 54.838967, 317.000000)
+Info in <TCanvas::Print>: png file plots/NaClmoido.dat.png has been created
+v = [5.159912,13.502767,15.670397,22.500952,26.710187,28.020847,32.860207,37.447517,41.757572,54.838967]
+v = [297.000000,500.000000,3923.000000,2206.000000,302.000000,595.000000,373.000000,699.000000,411.000000,317.000000]
+ FCN=31.0437 FROM MIGRAD    STATUS=CONVERGED     166 CALLS         167 TOTAL
+                     EDM=2.39714e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.62021e+02   3.85072e+00  -1.06930e-02   4.65441e-05
+   2  Mean         5.16206e+00   1.40838e-01   3.21443e-04   6.50873e-03
+   3  Sigma        2.03668e+00   9.81884e-01  -4.49526e-03   6.02101e-05
+chi2/ndof = 31.0437/37 = 0.83902
+cristallite diameter:  d = 24.657646 pm
+ FCN=787.269 FROM MIGRAD    STATUS=CONVERGED     101 CALLS         102 TOTAL
+                     EDM=1.56782e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.53023e+02   4.61063e+00   3.95945e-02  -1.66229e-05
+   2  Mean         1.34694e+01   6.07441e-03   8.29276e-05  -5.22346e-03
+   3  Sigma        3.68576e-01   1.07725e-02   1.04075e-04  -4.70737e-03
+chi2/ndof = 787.269/37 = 21.2775
+cristallite diameter:  d = 139.539066 pm
+ FCN=4715.11 FROM MIGRAD    STATUS=CONVERGED      96 CALLS          97 TOTAL
+                     EDM=1.00576e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.25122e+03   2.59295e+01   5.90543e-01  -7.58002e-07
+   2  Mean         1.56046e+01   6.04652e-04   1.91397e-05  -6.01765e-03
+   3  Sigma        1.05360e-01   6.16633e-04   3.46635e-05  -1.21255e-02
+chi2/ndof = 4715.11/37 = 127.435
+cristallite diameter:  d = 492.883401 pm
+ FCN=2875.36 FROM MIGRAD    STATUS=CONVERGED      81 CALLS          82 TOTAL
+                     EDM=3.60421e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.83082e+03   1.67337e+01   3.14089e-01  -3.17728e-05
+   2  Mean         2.24513e+01   8.48426e-04   2.19743e-05   8.94530e-01
+   3  Sigma        1.27942e-01   8.17028e-04   3.45019e-05  -1.98661e-01
+chi2/ndof = 2875.36/37 = 77.7123
+cristallite diameter:  d = 422.988540 pm
+ FCN=322.016 FROM MIGRAD    STATUS=CONVERGED     106 CALLS         107 TOTAL
+                     EDM=5.23093e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.56566e+02   3.45945e+00   1.97367e-02   4.07911e-06
+   2  Mean         2.66998e+01   8.85036e-03   7.75987e-05   5.40488e-04
+   3  Sigma        3.96618e-01   1.60419e-02   9.98159e-05   6.01075e-04
+chi2/ndof = 322.016/36 = 8.94489
+cristallite diameter:  d = 141.157818 pm
+ FCN=1058.04 FROM MIGRAD    STATUS=CONVERGED      78 CALLS          79 TOTAL
+                     EDM=4.38069e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.85167e+02   7.95473e+00   7.04812e-02   7.79668e-06
+   2  Mean         2.79824e+01   2.44350e-03   3.86338e-05   1.82101e-01
+   3  Sigma        1.99908e-01   3.82439e-03   5.50653e-05   1.47645e-01
+chi2/ndof = 1058.04/36 = 29.39
+cristallite diameter:  d = 283.317924 pm
+ FCN=503.701 FROM MIGRAD    STATUS=CONVERGED      80 CALLS          81 TOTAL
+                     EDM=5.75552e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.40095e+02   5.02899e+00   3.46919e-02  -2.05220e-04
+   2  Mean         3.28598e+01   3.89811e-03   4.26375e-05  -1.36092e-01
+   3  Sigma        2.54845e-01   5.55692e-03   5.37603e-05  -2.21480e-02
+chi2/ndof = 503.701/36 = 13.9917
+cristallite diameter:  d = 233.643619 pm
+ FCN=1008.76 FROM MIGRAD    STATUS=CONVERGED      80 CALLS          81 TOTAL
+                     EDM=4.41362e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     5.21862e+02   9.61755e+00   8.65066e-02   1.70974e-07
+   2  Mean         3.74154e+01   1.84737e-03   2.86332e-05   8.64344e-04
+   3  Sigma        1.69460e-01   2.64230e-03   4.34367e-05  -1.64471e-03
+chi2/ndof = 1008.76/36 = 28.0211
+cristallite diameter:  d = 371.607448 pm
+ FCN=470.392 FROM MIGRAD    STATUS=CONVERGED      72 CALLS          73 TOTAL
+                     EDM=5.53583e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.00398e+02   5.79362e+00   3.93459e-02   6.28942e-05
+   2  Mean         4.17577e+01   3.01387e-03   3.19152e-05   3.59961e-02
+   3  Sigma        2.24759e-01   3.90955e-03   4.00961e-05   8.41181e-02
+chi2/ndof = 470.392/37 = 12.7133
+cristallite diameter:  d = 298.313149 pm
+ FCN=232.955 FROM MIGRAD    STATUS=CONVERGED      81 CALLS          82 TOTAL
+                     EDM=3.71564e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     2.25366e+02   4.30442e+00   2.17553e-02  -7.16369e-05
+   2  Mean         5.48537e+01   4.63095e-03   3.45650e-05  -1.85111e-02
+   3  Sigma        2.91371e-01   6.18695e-03   3.98844e-05  -9.26706e-03
+chi2/ndof = 232.955/37 = 6.29607
+cristallite diameter:  d = 298.189643 pm
+Info in <TCanvas::Print>: png file plots/h_NaClmoido.png has been created
+v = [856.833413,330.971753,286.589651,201.865167,171.576285,164.305064,142.082784,126.881671,115.756857,94.280821]
+Info in <TCanvas::Print>: png file plots/indices_NaClmoido.dat.png has been created
+------ second and third orders ------
+1st 		 2nd 		 3rd
+5.162062 	 10.366632 	 15.659473
+13.469412 	 27.765405 	 44.329098
+15.604642 	 32.547301 	 53.803225
+22.451328 	 49.800082 	 nan
+26.699819 	 63.978874 	 nan
+27.982405 	 69.784700 	 nan
+32.859791 	 nan 	 nan
+37.415428 	 nan 	 nan
+41.757717 	 nan 	 nan
+54.853707 	 nan 	 nan
