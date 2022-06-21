@@ -76,7 +76,10 @@ TGraph read_TGraph(TString path, TString filename) {
     // change it later
     double dLiF = 201e-12, hc = 1.23984198e-6, q = 1.6e-19;
 
-    cout << "\\theta_bremsstrahlung_min_energy = " << hc / (2 * dLiF * sin((x_bremsstrahlung_min + 0.5) * M_PI / 180) * 1.e3) << (" kV") << endl;
+    double angle_rad = (x_bremsstrahlung_min)*M_PI / 180;
+    double B_min_energy = hc / (2 * dLiF * sin(angle_rad) * 1.e3);
+    double B_min_energy_error = hc * cos(angle_rad) * 0.5 * M_PI / 180 / (2 * dLiF * sin(angle_rad) * sin(angle_rad) * 1.e3);
+    cout << "\\theta_bremsstrahlung_min_energy = " << B_min_energy << ("+/-") << B_min_energy_error << (" kV") << endl;
 
     inp.close();
     // achando picos
@@ -84,9 +87,9 @@ TGraph read_TGraph(TString path, TString filename) {
     cout << "numero de picos = " << (peaks.at(0)).size() << endl;
 
     vector<double> theta_peaks;
-    cout << Form("Peaks (i, x, y)") << endl;
+    cout << Form("Peaks (i, x, y, E, dE)") << endl;
     for (int j = 0; j < (peaks.at(0)).size(); j++) {
-        cout << Form("(%d, %f, %f)", (int)peaks.at(0).at(j), x_array[(int)peaks.at(0).at(j)], peaks.at(1).at(j)) << endl;
+        cout << Form("(%d, %f, %f, %f, %f)", (int)peaks.at(0).at(j), x_array[(int)peaks.at(0).at(j)], peaks.at(1).at(j), hc / (2 * dLiF * sin(x_array[(int)peaks.at(0).at(j)] * M_PI / 180) * 1.e3), hc * cos(x_array[(int)peaks.at(0).at(j)] * M_PI / 180) * 0.5 * M_PI / 180 / (2 * dLiF * sin(x_array[(int)peaks.at(0).at(j)] * M_PI / 180) * sin(x_array[(int)peaks.at(0).at(j)] * M_PI / 180) * 1.e3)) << endl;
 
         theta_peaks.push_back(x_array[(int)peaks.at(0).at(j)]);
     }
@@ -102,7 +105,7 @@ TGraph read_TGraph(TString path, TString filename) {
 
     auto mg = new TMultiGraph();
     mg->SetName("mg");
-    mg->SetTitle(";#theta (^{#circ});Contagens/#theta");
+    mg->SetTitle(";2#theta (^{#circ});Contagens/2#theta");
 
     TCanvas *c = new TCanvas("c", " ", 0, 0, 800, 600);
 
@@ -135,7 +138,64 @@ TGraph read_TGraph(TString path, TString filename) {
     return *gr_peaks;
 }
 
+void superpose(TString path, TString filename1, TString filename2) {
+
+    TGraph *gr1 = new TGraph(path + filename1, "%lg %lg", "");
+    gr1->SetLineColor(kRed);
+    TGraph *gr2 = new TGraph(path + filename2, "%lg %lg", "");
+    gr2->SetLineColor(kBlue);
+
+    TArrow *kb = new TArrow(41.8, 0.008e6, 41.8, 0.006e6, 0.01, "|>");
+    TLatex *tkb = new TLatex(40.3, 0.0082e6, "K_{#beta}");
+    tkb->SetTextSize(0.03);
+    // tkb->SetTextColor(kBlue);
+
+    kb->SetAngle(40);
+    kb->SetLineWidth(2);
+    // kb->SetLineColor(kBlue);
+    // kb->SetFillColor(kBlue);
+    TArrow *ka = new TArrow(60, 0.014e6, 50, 0.014e6, 0.01, "|>");
+    TLatex *tka = new TLatex(62, 0.0138e6, "K_{#alpha}");
+    tka->SetTextSize(0.03);
+    // tka->SetTextColor(kBlue);
+
+    ka->SetAngle(40);
+    ka->SetLineWidth(2);
+    // ka->SetLineColor(kBlue);
+    // ka->SetFillColor(kBlue);
+    TArrow *kbrehmmin = new TArrow(11.5, 0.0042e6, 11.5, 0.0022e6, 0.01, "|>");
+    TLatex *tbrehmmin = new TLatex(10.0, 0.0044e6, "B_{min}");
+    tbrehmmin->SetTextSize(0.03);
+    // tbrehmmin->SetTextColor(kBlue);
+
+    kbrehmmin->SetAngle(40);
+    kbrehmmin->SetLineWidth(2);
+    // kbrehmmin->SetLineColor(kBlue);
+    // kbrehmmin->SetFillColor(kBlue);
+
+    TMultiGraph *mg = new TMultiGraph();
+    mg->Add(gr1, "AL");
+    mg->Add(gr2, "AL");
+    mg->SetTitle(";2#theta (^{#circ});Contagens/2#theta");
+
+    TCanvas *c1 = new TCanvas("c1", "", 800, 600);
+    // gr1->Draw("APL");
+    // gr2->Draw("SAMEAPL");
+    mg->Draw("A");
+    kb->Draw();
+    ka->Draw();
+    tka->Draw();
+    tkb->Draw();
+    tbrehmmin->Draw();
+    kbrehmmin->Draw();
+    mg->GetYaxis()->SetMaxDigits(2);
+    mg->GetYaxis()->SetLabelSize(0.03);
+    c1->SaveAs("plots/overlaid_LiF_DRX.png");
+    c1->Close();
+}
+
 void analise() {
     read_TGraph("DRX/", "drx_Cu_LiF_abs_Ni_24kV_60s.dat");
     read_TGraph("DRX/", "drx_Cu_LiF_24kV_60s.dat");
+    superpose("DRX/", "drx_Cu_LiF_abs_Ni_24kV_60s.dat", "drx_Cu_LiF_24kV_60s.dat");
 }

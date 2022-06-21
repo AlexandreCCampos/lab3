@@ -48,7 +48,11 @@ vector<vector<T>> find_peaksn(vector<T> *x, double height, int order = 1) {
 }
 
 void plot_hist(TH1 *h, TString output_name = "") {
+    gStyle->SetOptStat(0);
     TCanvas *c = new TCanvas("c", "", 800, 600);
+    h->GetYaxis()->SetMaxDigits(2);
+    h->GetYaxis()->SetLabelSize(0.03);
+
     h->Draw();
     c->SaveAs(output_name + Form(".png"));
     c->Close();

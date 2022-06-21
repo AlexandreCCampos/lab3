@@ -1,3 +1,5 @@
+// print log to file in term: SomeCommand 2>&1 | tee SomeFile.txt
+
 #include "TArrow.h"
 #include "TCanvas.h"
 #include "TChain.h"
@@ -22,7 +24,49 @@
 
 using namespace std;
 
-TGraph read_DRX(TString path, TString filename) {
+void superpose(TH1 *h1, TH1 *h2, TString filename) {
+
+    // TArrow *kb = new TArrow(41.8, 0.008e6, 41.8, 0.006e6, 0.01, "|>");
+    // TLatex *tkb = new TLatex(40.3, 0.0082e6, "K_{#beta}");
+    // tkb->SetTextSize(0.03);
+    // // tkb->SetTextColor(kBlue);
+
+    // kb->SetAngle(40);
+    // kb->SetLineWidth(2);
+    // // kb->SetLineColor(kBlue);
+    // // kb->SetFillColor(kBlue);
+    // TArrow *ka = new TArrow(60, 0.014e6, 50, 0.014e6, 0.01, "|>");
+    // TLatex *tka = new TLatex(62, 0.0138e6, "K_{#alpha}");
+    // tka->SetTextSize(0.03);
+    // // tka->SetTextColor(kBlue);
+
+    // ka->SetAngle(40);
+    // ka->SetLineWidth(2);
+    // // ka->SetLineColor(kBlue);
+    // // ka->SetFillColor(kBlue);
+    // TArrow *kbrehmmin = new TArrow(11.5, 0.0042e6, 11.5, 0.0022e6, 0.01, "|>");
+    // TLatex *tbrehmmin = new TLatex(10.0, 0.0044e6, "B_{min}");
+    // tbrehmmin->SetTextSize(0.03);
+    // // tbrehmmin->SetTextColor(kBlue);
+
+    // kbrehmmin->SetAngle(40);
+    // kbrehmmin->SetLineWidth(2);
+    // // kbrehmmin->SetLineColor(kBlue);
+    // // kbrehmmin->SetFillColor(kBlue);
+    TCanvas *c1 = new TCanvas("c1", "", 800, 600);
+    h1->SetLineColor(kGreen);
+
+    // h1->DrawNormalized();
+    // h2->DrawNormalized("same");
+    h1->SetMaximum(5000);
+    h1->Draw();
+    h2->Draw("same");
+
+    c1->SaveAs("plots/overlaid_" + filename + Form(".png"));
+    c1->Close();
+}
+
+TH1D *read_DRX(TString path, TString filename) {
     ifstream inp;
 
     // getting the sample name from path
@@ -97,9 +141,6 @@ TGraph read_DRX(TString path, TString filename) {
     c->SaveAs(Form("plots/") + filename + Form(".png"));
     c->Close();
 
-    print_vector(&theta_peaks);
-    print_vector(&peaks.at(1));
-
     vector<double> fit_d_peaks, fit_a_peaks;
     double comp_k_alpha = 1.54184; // angstrom??????
     TF1 *gaus_peak;
@@ -117,11 +158,14 @@ TGraph read_DRX(TString path, TString filename) {
         double d_cristallite = (4. / 3) * 0.9 * comp_k_alpha * 100 / (beta * cos(gaus_peak->GetParameter(1) * M_PI / 180));
         cout << Form("cristallite diameter:  d = %f pm", d_cristallite) << endl;
     }
+    print_vector(&theta_peaks);
+    print_vector(&fit_d_peaks);
+    print_vector(&peaks.at(1));
 
     plot_hist(h1, Form("plots/h_") + sample_name);
 
     TCanvas *c2 = new TCanvas("c2", "", 800, 600);
-    c2->SetGrid();
+    // c2->SetGrid();
 
     c2->cd();
     vector<TF1 *> net_par;
@@ -144,7 +188,7 @@ TGraph read_DRX(TString path, TString filename) {
                     linear_hkl->SetTitle(";d (pm);a (pm)");
 
                     leg = new TLatex(345, linear_hkl->Eval(345), Form("(%d%d%d)", h, k, l));
-                    leg->SetTextSize(0.015);
+                    leg->SetTextSize(0.02);
                     leg->SetTextAlign(13);
                     leg_array.push_back(leg);
                     // cout << Form("(%d%d%d)", h, k, l) << endl;
@@ -166,12 +210,17 @@ TGraph read_DRX(TString path, TString filename) {
 
     TLine *horizontal_hkl;
     vector<TLine *> horizontal_par;
-    for (int k = 0; k < 8; k++) {
-        double y = net_par.at(k)->Eval(fit_d_peaks.at(1));
-        horizontal_hkl = new TLine(60, y, 340, y);
-        horizontal_par.push_back(horizontal_hkl);
+    cout << "------ height a (pm) ------" << endl;
+    cout << Form("d \t a") << endl;
+    for (int k = 0; k < net_par.size(); k++) {
+        if (net_par.at(k)->Eval(fit_d_peaks.at(1)) < 1000) {
+            double y = net_par.at(k)->Eval(fit_d_peaks.at(1));
+            cout << Form("%f \t %f\t %f", fit_d_peaks.at(1), y, sqrt(k + 1) * 5) << endl;
+            horizontal_hkl = new TLine(60, y, 340, y);
+            horizontal_par.push_back(horizontal_hkl);
+        }
     }
-
+    net_par.at(net_par.size() - 1)->SetMaximum(1200);
     net_par.at(net_par.size() - 1)->Draw();
     leg_array.at(net_par.size() - 1)->Draw("SAME");
     for (int k = 0; k < net_par.size() - 1; k++) {
@@ -203,13 +252,19 @@ TGraph read_DRX(TString path, TString filename) {
         cout << Form("%f \t %f \t %f", ang1, ang2, ang3) << endl;
     }
 
-    delete h1;
-    return *gr_peaks;
+    // delete h1;
+    return h1;
 }
 
 void analise() {
+
     read_DRX("data/", "KBr.dat");
     // read_DRX("data/", "KBrdet62.dat");
-    read_DRX("data/", "NaClbrutoPlano.dat");
-    read_DRX("data/", "NaClmoido.dat");
+
+    TH1D *h_bruto;
+    TH1D *h_moido;
+
+    h_bruto = read_DRX("data/", "NaClbrutoPlano.dat");
+    h_moido = read_DRX("data/", "NaClmoido.dat");
+    superpose(h_bruto, h_moido, "NaCl");
 }
