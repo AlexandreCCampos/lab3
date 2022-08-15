@@ -53,7 +53,7 @@ void plot_TGraph_multifunction(U *f, vector<T *> *mf, TString title = "", TStrin
     c->Close();
 }
 
-TF1 *make_fit(TString file_name = "data/dados_calibracao_Hall.txt") {
+void make_fit(TString file_name = "data/dados_calibracao_Hall.txt") {
     // reading a dat file with name in file_name variable
     ifstream inp;
     inp.open(file_name);
@@ -92,55 +92,8 @@ TF1 *make_fit(TString file_name = "data/dados_calibracao_Hall.txt") {
     file_name.Tokenize(filename, from, "/");
 
     plot_TGraph_multifunction(graph1, &functions, ";I (A); B (mT)", "AP*", Form("plots/") + filename);
-    return linfac;
-}
-
-void make_fit_sample(TString file_name = "data/dados_calibracao_Hall.txt", double B = 1) {
-    // reading a dat file with name in file_name variable
-    ifstream inp;
-    inp.open(file_name);
-    double _x, _y, xmax, xmin;
-    vector<double> x, y;
-
-    std::string dummy1; // just to skip the line. look for other solution later
-    getline(inp, dummy1);
-
-    while (inp >> _y >> _x) {
-        if (_x > xmax) xmax = _x;
-        if (_x < xmin) xmin = _x;
-
-        x.push_back(_x);
-        y.push_back(_y);
-    }
-
-    for (int i = 0; i < x.size(); i++) {
-        x.at(i) = x.at(i) * 1.e-3 / 0.1;
-        y.at(i) = y.at(i) * 1.e-3 / B;
-    }
-
-    TF1 *linfac = new TF1("linfac", "[0]*x+[1]", -5, 5);
-    linfac->SetNpx(10000);
-    TGraph *graph1 = new TGraph(x.size(), &x.at(0), &y.at(0));
-
-    graph1->Fit("linfac", "R");
-
-    vector<TF1 *> functions;
-    functions.push_back(linfac);
-
-    // getting names
-    Ssiz_t from = 0;
-    TString path, filename;
-    file_name.Tokenize(path, from, "/");
-    file_name.Tokenize(filename, from, "/");
-
-    plot_TGraph_multifunction(graph1, &functions, ";I (A); U_{H}/B (V/T)", "AP*", Form("plots/") + filename);
 }
 
 void analise() {
-    TF1 *calibration = make_fit("data/dados_calibracao_Hall.txt");
-
-    make_fit_sample("data/zinc_0.25A.txt", 1.e-3 * calibration->Eval(0.25));
-    make_fit_sample("data/zinc_0.5A.txt", 1.e-3 * calibration->Eval(0.5));
-    make_fit_sample("data/zinc_0.75A.txt", 1.e-3 * calibration->Eval(0.75));
-    make_fit_sample("data/zinc_1A.txt", 1.e-3 * calibration->Eval(1));
+    make_fit("data/dados_calibracao_Hall.txt");
 }
